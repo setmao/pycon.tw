@@ -103,7 +103,8 @@ THIRD_PARTY_APPS = (
     'sorl.thumbnail',
     'registry',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework_simplejwt',
 )
 
 LOCAL_APPS = (
@@ -136,6 +137,12 @@ MIDDLEWARE = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 CORS_ORIGIN_ALLOW_ALL = True
 
